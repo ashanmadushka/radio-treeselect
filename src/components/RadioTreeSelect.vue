@@ -594,6 +594,42 @@ export default {
       return null; // ID not found in the nested structure
     };
 
+    const calculateCharactersInWindowWidth = (text, font)  => {
+      var windowWidth = window.innerWidth;
+
+      // Create a virtual element
+      var virtualElement = document.createElement('div');
+      virtualElement.className = 'invisible';
+
+      // Set content and styles
+      virtualElement.textContent = text;
+      virtualElement.style.font = font;
+      virtualElement.style.width = '100%'; // Set width to 100% of the window
+
+      // Append the virtual element to the body
+      document.body.appendChild(virtualElement);
+
+      // Calculate the number of characters that fit within the window width
+      var charactersInWidth = Math.floor(windowWidth / virtualElement.scrollWidth * text.length);
+
+      // Remove the virtual element from the body
+      document.body.removeChild(virtualElement);
+
+      return charactersInWidth;
+    }
+
+    const classNameForSelectValue = (id, labelClassName) => {
+        const result = findParentDataById(props.options, id, []);
+        const string =  result.join(props.breadCrumbSymbol);
+        const width = calculateCharactersInWindowWidth(string, '12px Arial')
+
+        if (width > 100) {
+          return 'select-value-long ' + labelClassName
+        } else {
+          return 'select-value-short ' + labelClassName
+        }
+    }
+
     const generateString = (id) => {
       const result = findParentDataById(props.options, id, []);
       return result.join(props.breadCrumbSymbol);
@@ -614,6 +650,7 @@ export default {
       confirmAction,
       openDropDown,
       generateString,
+      classNameForSelectValue
     };
   },
 };
@@ -711,7 +748,7 @@ export default {
         </div>
       </template>
       <template v-slot:value-label="{ node }" :class="className">
-        <div v-if="!confirmButton || clickConfirm" :class="labelClassName" className="select-value">
+        <div v-if="!confirmButton || clickConfirm"  :class="classNameForSelectValue(node.id, labelClassName)">
           {{ generateString(node.id) }}
         </div>
       </template>
@@ -758,10 +795,18 @@ export default {
   display: none;
 }
 
-.select-value {
+.select-value-long {
   overflow: hidden;
   white-space: nowrap;
   width: calc(100vw - 100px);
+  text-overflow: ellipsis;
+  direction: rtl;
+}
+
+.select-value-short {
+  overflow: hidden;
+  white-space: nowrap;
+  width: auto;
   text-overflow: ellipsis;
   direction: rtl;
 }
