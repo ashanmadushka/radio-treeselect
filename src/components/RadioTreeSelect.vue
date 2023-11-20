@@ -33,7 +33,7 @@ export default {
     const clickConfirm = ref(false);
     const alwaysOpen = ref(false);
 
-    const handleSelectDeselect = () => {
+    const handleSelect = () => {
       if (props.confirmButton) {
         isExpanded.value = true;
         className.value = isExpanded.value ? 'expanded' : '';
@@ -111,7 +111,7 @@ export default {
       closeDropDown,
       clickConfirm,
       alwaysOpen,
-      handleSelectDeselect,
+      handleSelect,
       confirmAction,
       openDropDown,
       generateString,
@@ -129,8 +129,7 @@ export default {
       :appendToBody="false"
       :always-open="alwaysOpen"
       :close-on-select="closeDropDown"
-      @select="handleSelectDeselect"
-      @deselect="handleSelectDeselect"
+      @select="handleSelect"
       @open="openDropDown"
       class="dropdown"
       :class="className"
