@@ -575,19 +575,6 @@ export default {
       }
     };
 
-    const truncatedSentence = (sentence) => {
-      const treeselectInput = document.querySelector('.vue-treeselect__value-container');
-      const inputWidth = treeselectInput ? treeselectInput.offsetWidth : 0;
-
-      if (inputWidth) {
-        const dividedValue = props.isMultiple ? 4.9 : 7;
-        const maxLength = Math.floor(inputWidth / dividedValue);
-        return sentence.length > maxLength ? '...' + sentence.slice(-maxLength) : sentence;
-      }
-
-      return sentence;
-    };
-
     const findParentDataById = (data, targetId, path = []) => {
       for (const item of data) {
         const currentPath = [...path, item.label];
@@ -609,8 +596,7 @@ export default {
 
     const generateString = (id) => {
       const result = findParentDataById(props.options, id, []);
-      const strig = result.join(props.breadCrumbSymbol);
-      return truncatedSentence(strig);
+      return result.join(props.breadCrumbSymbol);
     };
 
     onMounted(() => {
@@ -725,7 +711,7 @@ export default {
         </div>
       </template>
       <template v-slot:value-label="{ node }" :class="className">
-        <div v-if="!confirmButton || clickConfirm" :class="labelClassName">
+        <div v-if="!confirmButton || clickConfirm" :class="labelClassName" className="select-value">
           {{ generateString(node.id) }}
         </div>
       </template>
@@ -770,5 +756,13 @@ export default {
 
 .expanded .vue-treeselect__multi-value-item-container {
   display: none;
+}
+
+.select-value {
+  overflow: hidden;
+  white-space: nowrap;
+  width: calc(100vw - 100px);
+  text-overflow: ellipsis;
+  direction: rtl;
 }
 </style>

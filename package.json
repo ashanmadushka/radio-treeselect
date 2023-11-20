@@ -1,6 +1,6 @@
 {
   "name": "radio-treeselect",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "dist/radio-treeselect.common.js",
   "private": false,
   "author": "ashan722",

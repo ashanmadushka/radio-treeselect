@@ -77,7 +77,7 @@
 </script>
 
 <template>
-  <radio-tree-select :isMultiple="false" :options="options" :confirmButton="true" breadCrumbSymbol="  >>  " :defaultExpandLevel="true"/>
+  <radio-tree-select :isMultiple="true" :options="options" :confirmButton="false" breadCrumbSymbol="  >>  " :defaultExpandLevel="true"/>
 </template>
 
 <style>
