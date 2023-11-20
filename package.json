@@ -1,6 +1,6 @@
 {
   "name": "radio-treeselect",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/radio-treeselect.common.js",
   "private": false,
   "author": "ashan722",
@@ -10,6 +10,10 @@
     "lint": "vue-cli-service lint",
     "build-package": "vue-cli-service build --target lib --name radio-treeselect ./src/install.js",
     "analyze": "vue-cli-service build --mode production --report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashanmadushka/radio-treeselect"
   },
   "dependencies": {
     "vue": "^3.0.5",
