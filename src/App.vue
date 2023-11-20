@@ -1,17 +1,18 @@
 <script>
   import RadioTreeSelect from './components/RadioTreeSelect.vue'
+
   const options = [
     {
       id: "a",
-      label: "aasdasd sdada dasda sdsad asdfsa fasdf asfasdasd dafsdf asdfdsf dsfsdf dfdsf ",
+      label: "In linguistics and grammar, a sentence is a linguistic expression, such as the English example `The quick brown fox jumps over the lazy dog.` In traditional grammar it is typically defined as a string of words that expresses a complete though.",
       children: [
         {
           id: "aa",
-          label: "aa asd dasf dfdsf sdfsdf fdsf dfsd ffg adfldfasf sdaflsadfsafsa fsfsfsaf sfsdfasfsa sdfsdafasdfsd sdfsadfsfsd sfdsfasfs f",
+          label: "Wikitext redirects here. For the Wikipedia help page,",
             children: [
               {
                 id: "aaa",
-                label: "aaa ldfknasjfn dfndfanff fasjdfbaksfdsf kfnflas fdsf dsfklasdfmnksaf asdfaslfknasdfl sdfasdfas;fm fdafsdafa asdfasfsj nfsdafsf sdf",
+                label: "Some wikis keep a record of changes made to wiki pages; often, every version of the page is stored.",
               },
               {
                 id: "abb",
@@ -76,7 +77,7 @@
 </script>
 
 <template>
-  <radio-tree-select :isMultiple="true" :options="options" :confirmButton="true" breadCrumbSymbol="  >>  "/>
+  <radio-tree-select :isMultiple="false" :options="options" :confirmButton="true" breadCrumbSymbol="  >>  " :defaultExpandLevel="true"/>
 </template>
 
 <style>
