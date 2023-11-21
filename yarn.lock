@@ -8903,7 +8903,7 @@ vue3-treeselect@0.1.10:
   resolved "https://registry.npmjs.org/vue3-treeselect/-/vue3-treeselect-0.1.10.tgz"
   integrity sha512-QawdAbzmlZ7T3uBdSU4FRnrnmcV0Q9Jrph5hUBQJcXmM9OZ8lULQo7O7YbKxkOyuDX9Yx2rGjs6L5FKcL1FeXA==
 
-vue@^3.0.5:
+vue@^3.2.0:
   version "3.3.8"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.3.8.tgz#532ff071af24f6a69e5ecc53a66858a9ee874ffc"
   integrity sha512-5VSX/3DabBikOXMsxzlW8JyfeLKlG9mzqnWgLQLty88vdZL7ZJgrdgBOmrArwxiLtmS+lNNpPcBYqrhE6TQW5w==

@@ -18,7 +18,7 @@
 - Supports a wide range of browsers (see [below](#browser-compatibility))
 - RTL support
 
-*Requires Vue 3.0+*
+*Requires Vue 3.2.0+*
 
 ### Demo
 https://codesandbox.io/s/thirsty-elgamal-wj2pw6?file=/src/App.vue
