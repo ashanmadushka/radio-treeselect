@@ -25,7 +25,7 @@
 It's recommended to install radio-treeselect via npm, and build your app using a bundler like [webpack](https://webpack.js.org/).
 
 ```bash
-npm install --save radio-treeselect
+npm install radio-treeselect
 ```
 
 This example shows how to integrate radio-treeselect with your [Vue SFCs](https://vuejs.org/v2/guide/single-file-components.html).
@@ -34,28 +34,28 @@ This example shows how to integrate radio-treeselect with your [Vue SFCs](https:
 <!-- Vue SFC -->
 <script>
     // import the component
-    import RadioTreeSelect from './components/RadioTreeSelect.vue'
+    import RadioTreeSelect from 'radio-treeselect'
     // import the styles
-    import "radio-treeselect/dist/radioTreeSelect.css";
+    import "radio-treeselect/dist/radio-treeselect.css";
 
     const options = [
         {
             id: "a",
-            label: "aasdasd sdada dasda sdsad asdfsa fasdf asfasdasd dafsdf asdfdsf dsfsdf dfdsf ",
+            label: "In linguistics and grammar, a sentence is a linguistic expression, such as the English example `The quick brown fox jumps over the lazy dog.` In traditional grammar it is typically defined as a string of words that expresses a complete thought",
             children: [
                 {
                     id: "aa",
-                    label: "aa asd dasf dfdsf sdfsdf fdsf dfsd ffg adfldfasf sdaflsadfsafsa fsfsfsaf sfsdfasfsa sdfsdafasdfsd sdfsadfsfsd sfdsfasfs f",
-                        children: [
-                            {
-                                id: "aaa",
-                                label: "aaa ldfknasjfn dfndfanff fasjdfbaksfdsf kfnflas fdsf dsfklasdfmnksaf asdfaslfknasdfl sdfasdfas;fm fdafsdafa asdfasfsj nfsdafsf sdf",
-                            },
-                            {
-                                id: "abb",
-                                label: "abb",
-                            },
-                        ],
+                    label: "Wikitext redirects here. For the Wikipedia help page,",
+                    children: [
+                        {
+                        id: "aaa",
+                        label: "Some wikis keep a record of changes made to wiki pages; often, every version of the page is stored.",
+                        },
+                        {
+                        id: "abb",
+                        label: "abb",
+                        },
+                    ],
                 },
                 {
                     id: "ab",
@@ -63,43 +63,43 @@ This example shows how to integrate radio-treeselect with your [Vue SFCs](https:
                 },
             ],
         },
-    {
-        id: "b",
-        label: "b",
-    },
-    {
-        id: "c",
-        label: "c",
-    },
-    {
-        id: "d",
-        label: "d",
-        children: [
-            {
-                id: "test",
-                label: "test",
-            },
-            {
-                id: "abc",
-                label: "abc",
-            },
-        ],
-    },
-    {
-        id: "e",
-        label: "e",
-        children: [
-            {
-                id: "f",
-                label: "f",
-            },
-            {
-                id: "g",
-                label: "g",
-            },
-        ],
-    },
-  ]
+        {
+            id: "b",
+            label: "b",
+        },
+        {
+            id: "c",
+            label: "c",
+        },
+        {
+            id: "d",
+            label: "d",
+            children: [
+                {
+                    id: "test",
+                    label: "test",
+                },
+                {
+                    id: "abc",
+                    label: "abc",
+                },
+            ],
+        },
+        {
+            id: "e",
+            label: "e",
+            children: [
+                {
+                    id: "f",
+                    label: "f",
+                },
+                {
+                    id: "g",
+                    label: "g",
+                },
+            ],
+        },
+    ]
 
     export default {
         components: {
@@ -114,7 +114,7 @@ This example shows how to integrate radio-treeselect with your [Vue SFCs](https:
 </script>
 
 <template>
-    <radio-treeselect :isMultiple="true" :options="options" :confirmButton="true" breadCrumbSymbol="  >>  "/>
+    <RadioTreeSelect :isMultiple="true" :options="options" :confirmButton="true" breadCrumbSymbol="  >>  "/>
 </template>
 ```
 ### Documentation for vue 2 & Live Demo. Be careful with breaking changes above.
