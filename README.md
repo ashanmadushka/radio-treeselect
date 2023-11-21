@@ -20,6 +20,9 @@
 
 *Requires Vue 3.0+*
 
+### Demo
+https://codesandbox.io/s/thirsty-elgamal-wj2pw6?file=/src/App.vue
+
 ### Getting Started
 
 It's recommended to install radio-treeselect via npm, and build your app using a bundler like [webpack](https://webpack.js.org/).
